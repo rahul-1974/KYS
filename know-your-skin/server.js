@@ -2,8 +2,8 @@ const path = require('path');
 const express = require('express');
 const app = require('./api/index');
 
-// Serve static frontend locally
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve static files from project root (index.html lives here)
+app.use(express.static(__dirname));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
